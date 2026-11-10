@@ -3,7 +3,7 @@ description: Data Scientist | Machine Learning Engineer
 lang: en
 permalink: /blog/:year/:month/:title/
 markdown: kramdown
-exclude: [README.md]
+exclude: [README.md, BLOGGING.md, _templates]
 defaults:
   - scope: { path: "", type: posts }
     values: { layout: post }

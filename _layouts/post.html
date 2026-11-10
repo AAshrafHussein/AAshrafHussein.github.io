@@ -1,4 +1,5 @@
 ---
 layout: default
 ---
-{{ content }}
+{%- comment -%} Obsidian writes images as assets/img/x.png; make them root-relative so they work at /blog/... URLs {%- endcomment -%}
+{{ content | replace: 'src="assets/', 'src="/assets/' }}
