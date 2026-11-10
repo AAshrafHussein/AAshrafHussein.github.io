@@ -1,0 +1,27 @@
+<!doctype html>
+{% assign lang = page.lang | default: site.lang %}
+<html lang="{{ lang }}" dir="{% if lang == 'ar' %}rtl{% else %}ltr{% endif %}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  <nav dir="ltr">
+    <a href="{{ '/' | relative_url }}">Home</a>
+    <a href="{{ '/blog/' | relative_url }}">Blog</a>
+  </nav>
+  <main>
+    {% if page.layout == 'post' %}
+      <h1>{{ page.title }}</h1>
+      <p class="meta">{{ page.date | date: "%Y-%m-%d" }}</p>
+    {% endif %}
+    {{ content }}
+  </main>
+</body>
+</html>
