@@ -1,0 +1,105 @@
+---
+layout: default
+title: Ahmed Ashraf Hussein
+---
+
+<header class="hero">
+  <h1>Ahmed Ashraf Hussein</h1>
+  <p class="role">Applied Data Scientist &amp; ML Engineer · Riyadh</p>
+  <p class="intro">
+    I build LLM systems that hold up in production: retrieval with citations you can trust,
+    natural-language questions over databases, and document AI that reads Arabic well.
+    Before that I spent years shipping NLP for startups and freelance clients.
+  </p>
+  <p class="links">
+    <a href="mailto:ahmedashraf201500513@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/aa4raf/">LinkedIn</a>
+    <a href="https://github.com/AAshrafHussein">GitHub</a>
+    <a href="{{ '/blog/' | relative_url }}">Blog</a>
+  </p>
+</header>
+
+<section>
+  <h2>What I work on</h2>
+  <dl class="focus">
+    <dt>RAG &amp; attribution</dt>
+    <dd>Citation and hallucination detection so answers point back to their sources.</dd>
+    <dt>Text2SQL</dt>
+    <dd>Choosing the right tables with small fine-tuned encoders instead of large LLM calls.</dd>
+    <dt>Arabic document AI</dt>
+    <dd>OCR and layout parsing for complex Arabic and financial PDFs.</dd>
+    <dt>ML in production</dt>
+    <dd>Agentic workflows, evaluation, CI/CD and faster inference.</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Selected results</h2>
+  <ul class="stats">
+    <li><strong>−37%</strong><span>RAG hallucination rate with a citation &amp; detection framework</span></li>
+    <li><strong>0.71 → 0.93</strong><span>Table-selection recall on BIRD (Text2SQL)</span></li>
+    <li><strong>12× smaller</strong><span>Fine-tuned encoder matching LLM-level recall</span></li>
+    <li><strong>−25%</strong><span>Inference time via smaller embeddings and quantization</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Experience</h2>
+  <ol class="timeline">
+    <li>
+      <div class="when">2025 – now</div>
+      <div>
+        <h3>MOZN AI</h3>
+        <p class="what">Applied Data Scientist &amp; ML Engineer → AI / Forward Deployed Engineer</p>
+        <p>RAG attribution, agentic workflows and Text2SQL research (OSOS); since June 2026, Arabic document parsing and citations for the NCGR AI assistant.</p>
+      </div>
+    </li>
+    <li>
+      <div class="when">2023 – 2025</div>
+      <div>
+        <h3>Cybral <span class="muted">(Softec Technologies)</span></h3>
+        <p class="what">Senior Machine Learning Engineer</p>
+        <p>NLP categorization, a feedback-ingestion service, CI/CD with rollback, and mentoring engineers.</p>
+      </div>
+    </li>
+    <li>
+      <div class="when">2019 – 2022</div>
+      <div>
+        <h3>Upwork</h3>
+        <p class="what">Freelance Machine Learning Engineer</p>
+        <p>Top Rated with 100% job success across 13+ long-term NLP contracts.</p>
+      </div>
+    </li>
+    <li>
+      <div class="when">2019</div>
+      <div>
+        <h3>Wuzzuf</h3>
+        <p class="what">Machine Learning Intern</p>
+        <p>Job recommendation engine over 700K profiles and 8M applications.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>Education &amp; certificates</h2>
+  <p>B.S. Communication &amp; Information Engineering (AI &amp; Big Data), Zewail City of Science and Technology, 2020</p>
+  <p>AWS Certified Cloud Practitioner</p>
+</section>
+
+<section>
+  <h2>Writing</h2>
+  {% if site.posts.size == 0 %}
+    <p class="muted">Arabic technical posts are coming soon.</p>
+  {% else %}
+    <ul class="posts">
+    {% for post in site.posts limit: 3 %}
+      <li dir="{% if post.lang == 'ar' %}rtl{% else %}ltr{% endif %}">
+        <span class="muted">{{ post.date | date: "%Y-%m-%d" }}</span> ·
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+    <p><a href="{{ '/blog/' | relative_url }}">All posts →</a></p>
+  {% endif %}
+</section>
